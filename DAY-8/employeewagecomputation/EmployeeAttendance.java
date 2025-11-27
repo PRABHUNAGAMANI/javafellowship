@@ -45,6 +45,7 @@ public class EmployeeAttendance
             long wageOfEmplopee=dailywages.calculateWage(employee.getEmployeeType());
             System.out.println("EMPLOYEE WORKING HOURS : "+employee.getWageDetails().getHoursWoked());
             System.out.println("EMPLOYEE WAGE : RS. "+wageOfEmplopee);
+            calculateMonthlyWage(employee);
         }
         else
         {
@@ -55,7 +56,7 @@ public class EmployeeAttendance
 
     public void calculateMonthlyWage(Employee employee)
     {
-        assignRandomEmploymentType(employee);
+       // assignRandomEmploymentType(employee);
 
         DailyWages daily = new DailyWages(employee.getWageDetails());
 

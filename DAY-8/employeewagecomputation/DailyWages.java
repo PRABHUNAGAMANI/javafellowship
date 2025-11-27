@@ -14,28 +14,27 @@ public class DailyWages implements WageCalculator
 
     public long calculateWage(String employeeType)
     {
-        System.out.println("WAGE PER HOUR : "+wagedetails.getWagePerHour());
         Random random = new Random();
-        int hoursWorked=0;
+        int hoursWorked = 0;
 
         switch (employeeType)
         {
             case "FULL_TIME":
-                hoursWorked = random.nextInt(9);  // 0–8 hours
+                hoursWorked = random.nextInt(9);
                 break;
 
             case "PART_TIME":
-                hoursWorked = 8;  // fixed hours
+                hoursWorked = 8;
                 break;
 
             default:
                 hoursWorked = 0;
-                break;
         }
-    //    int hoursWorked = random.nextInt(9); // 0-8 hours
+
         wagedetails.setHoursWoked(hoursWorked);
         return hoursWorked * wagedetails.getWagePerHour();
     }
+
 
     public long calculateMonthlyWage(String employeeType)
     {

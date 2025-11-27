@@ -25,7 +25,7 @@ public class EmployeeWageComputation
         System.out.println("------------------------------------");
         Employee randomEmployee= attendance.getRandomEmloyee();
         attendance.checkAttendance(randomEmployee);
-        attendance.calculateMonthlyWage(randomEmployee);
+       // attendance.calculateMonthlyWage(randomEmployee);
 
     }
 }
