@@ -64,6 +64,7 @@ public class EmployeeAttendance
 
         System.out.println("------------------------------------------------");
         System.out.println("MONTHLY WAGE CALCULATION");
+        System.out.println("-------------------------");
         System.out.println("Employee: " + employee.getEmployeeName());
         System.out.println("Type: " + employee.getEmployeeType());
         System.out.println("Wage Per Hour: " + employee.getWageDetails().getWagePerHour());
