@@ -9,7 +9,7 @@ public class AddressBookSystem {
     private Map<String, AddressBook> addressBooks = new HashMap<>();
     private Scanner sc = new Scanner(System.in);
 
-    // Create a new address book
+
     public void addNewAddressBook() {
         System.out.print("Enter New Address Book Name: ");
         String name = sc.nextLine();
@@ -23,7 +23,7 @@ public class AddressBookSystem {
         System.out.println("Address Book '" + name + "' created successfully!\n");
     }
 
-    // Open an existing address book
+
     public void openAddressBook() {
         System.out.print("Enter Address Book Name to Open: ");
         String name = sc.nextLine();
@@ -36,10 +36,10 @@ public class AddressBookSystem {
         }
 
         System.out.println("\n--- Opening Address Book: " + name + " ---\n");
-        selected.menu(); // Use the menu from AddressBook
+        selected.menu();
     }
 
-    // List all address books
+
     public void listAddressBooks() {
         if (addressBooks.isEmpty()) {
             System.out.println("No Address Books available.\n");
@@ -53,7 +53,7 @@ public class AddressBookSystem {
         System.out.println();
     }
 
-    // Main system menu
+
     public void mainMenu() {
         int choice;
 

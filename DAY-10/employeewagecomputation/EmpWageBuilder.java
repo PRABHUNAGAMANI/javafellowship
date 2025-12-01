@@ -32,13 +32,13 @@ public class EmpWageBuilder {
 
         while (totalDays < company.workingDays && totalHours < company.maxHoursPerMonth) {
             totalDays++;
-            int empCheck = random.nextInt(3); // 0-Absent, 1-Part-Time, 2-Full-Time
+            int empCheck = random.nextInt(3);
             int hoursWorked = 0;
 
             switch (empCheck) {
-                case 1: hoursWorked = 4; break;  // Part-Time
-                case 2: hoursWorked = 8; break;  // Full-Time
-                default: hoursWorked = 0;        // Absent
+                case 1: hoursWorked = 4; break;
+                case 2: hoursWorked = 8; break;
+                default: hoursWorked = 0;
             }
 
             totalHours += hoursWorked;
