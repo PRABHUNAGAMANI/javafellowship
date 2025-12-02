@@ -11,6 +11,6 @@ public class House
 
     public void displayHouseInformation()
     {
-        System.out.println("HOUSE-DETAILS -> "+" ROOM SIZE : "+room.roomSize+" , "+" ROOM NUMBER : "+room.roomNumber);
+        System.out.println("HOUSE-DETAILS : "+" ROOM SIZE : "+room.roomSize+" , "+" ROOM NUMBER : "+room.roomNumber);
     }
 }
