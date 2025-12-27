@@ -6,6 +6,8 @@ package functioninterface;
 // it accept one argument
 // it returns any return datatype
 // it is used to refer lambda expression
+// in stream FUNCTION is used in map(), flatMap() methods.
+// Function is used when we need to transform an object from one type to another.
 
 // DEFAULT METHODS IN FUNCTION INTERFACE
 // ----------------------------------------
