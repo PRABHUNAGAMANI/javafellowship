@@ -150,6 +150,46 @@ public class Oopsbannerapp
                 };
     }
 
+    private static void uc4() {
+
+        BannerCharacter[] characters = {
+                new BannerCharacter('O', getOPattern()),
+                new BannerCharacter('O', getOPattern()),
+                new BannerCharacter('P', getPPattern()),
+                new BannerCharacter('S', getSPattern())
+        };
+        printBannerUC4(characters);
+    }
+
+    // Inner Class for Encapsulation
+    static class BannerCharacter {
+        private char character;
+        private String[] pattern;
+
+        public BannerCharacter(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        public char getCharacter() {
+            return character;
+        }
+
+        public String[] getPattern() {
+            return pattern;
+        }
+    }
+
+    private static void printBannerUC4(BannerCharacter[] characters) {
+        for (int row = 0; row < 9; row++) {
+            StringBuilder line = new StringBuilder();
+            for (BannerCharacter ch : characters) {
+                line.append(ch.getPattern()[row]).append(" ");
+            }
+            System.out.println(line.toString());
+        }
+    }
+
 
     public static void main(String[] args)
     {
@@ -162,6 +202,9 @@ public class Oopsbannerapp
         System.out.println("USE-CASE-3");
         System.out.println("----------------------------------------------------------------------------------------");
         Uc3();
+        System.out.println("USE-CASE-4");
+        System.out.println("----------------------------------------------------------------------------------------");
+        uc4();
 
     }
 }
