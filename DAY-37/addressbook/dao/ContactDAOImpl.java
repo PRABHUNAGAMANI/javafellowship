@@ -163,4 +163,141 @@ public class ContactDAOImpl implements ContactDAO
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void sortByNameAsc() {
+
+        String sortQuery =
+                "SELECT * FROM "+DBInitializer.tableName +" ORDER BY first_name ASC";
+
+        try {
+            Connection con = DriverManager.getConnection(getDBurl(), USER, PASSWORD);
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(sortQuery);
+
+            System.out.println("ID | FIRST NAME | LAST NAME | ADDRESS | CITY | STATE | ZIP | PHONE NUMBER");
+            System.out.println("--------------------------------------------");
+
+            while (rs.next()) {
+                System.out.println(
+                        rs.getInt("id") + " | " +
+                                rs.getString("first_name") + " | " +
+                                rs.getString("last_name") + " | " +
+                                rs.getString("address") + " | " +
+                                rs.getString("city") + " | " +
+                                rs.getString("state") + " | " +
+                                rs.getString("zip") + " | " +
+                                rs.getString("phone_number")
+                );
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void sortByNameDsc()
+    {
+        String sortQuery =
+                "SELECT * FROM "+DBInitializer.tableName +" ORDER BY first_name DESC";
+
+        try {
+            Connection con = DriverManager.getConnection(getDBurl(), USER, PASSWORD);
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(sortQuery);
+
+            System.out.println("ID | FIRST NAME | LAST NAME | ADDRESS | CITY | STATE | ZIP | PHONE NUMBER");
+            System.out.println("--------------------------------------------");
+
+            while (rs.next()) {
+                System.out.println(
+                        rs.getInt("id") + " | " +
+                                rs.getString("first_name") + " | " +
+                                rs.getString("last_name") + " | " +
+                                rs.getString("address") + " | " +
+                                rs.getString("city") + " | " +
+                                rs.getString("state") + " | " +
+                                rs.getString("zip") + " | " +
+                                rs.getString("phone_number")
+                );
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void viewByState(String state)
+    {
+        String query =
+                "SELECT * FROM " + DBInitializer.tableName +
+                        " WHERE state = ?";
+
+        try {
+            Connection con = DriverManager.getConnection(getDBurl(), USER, PASSWORD);
+            PreparedStatement ps = con.prepareStatement(query);
+
+            ps.setString(1, state);
+
+            ResultSet rs = ps.executeQuery();
+
+            System.out.println("ID | FIRST NAME | LAST NAME | ADDRESS | CITY | STATE | ZIP | PHONE NUMBER");
+            System.out.println("---------------------------------------------------");
+
+            boolean found = false;
+
+            while (rs.next()) {
+                found = true;
+                System.out.println(
+                        rs.getInt("id") + " | " +
+                                rs.getString("first_name") + " | " +
+                                rs.getString("last_name") + " | " +
+                                rs.getString("address") + " | " +
+                                rs.getString("city") + " | " +
+                                rs.getString("state") + " | " +
+                                rs.getString("zip") + " | " +
+                                rs.getString("phone_number")
+                );
+            }
+
+            if (!found) {
+                System.out.println("NO RECORDS FOUND");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void addContact(Contact c) {
+
+        String sql =
+                "INSERT INTO " + DBInitializer.tableName +
+                        "(first_name, last_name, address, city, state, zip, phone_number) " +
+                        "VALUES (?,?,?,?,?,?,?)";
+
+        try {
+            Connection con = DriverManager.getConnection(getDBurl(), USER, PASSWORD);
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setString(1, c.getFirstName());
+            ps.setString(2, c.getLastName());
+            ps.setString(3, c.getAddress());
+            ps.setString(4, c.getCity());
+            ps.setString(5, c.getState());
+            ps.setString(6, c.getZip());
+            ps.setString(7, c.getPhoneNumber());
+
+            ps.executeUpdate();
+
+            System.out.println("CONTACT SAVED TO DATABASE");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

@@ -8,4 +8,8 @@ public interface ContactService
     public void viewContact();
     public void updateContact(int id, Contact contact);
     public void deleteContact(int id);
+    public void sortContactsByNameAsc();
+    public void sortContactsByNameDesc();
+    public void viewContactsByState(String state);
+    public void addContactToFile(Contact contact);
 }

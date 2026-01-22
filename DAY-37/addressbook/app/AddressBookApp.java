@@ -1,6 +1,8 @@
 package addressbook.app;
 
+import addressbook.csv.CsvViewer;
 import addressbook.db.DBInitializer;
+import addressbook.json.JsonViewer;
 import addressbook.model.Contact;
 import addressbook.service.ContactService;
 import addressbook.service.ContactServiceImpl;
@@ -24,7 +26,12 @@ public class AddressBookApp
             System.out.println("2. VIEW CONTACTS");
             System.out.println("3. UPDATE CONTACTS");
             System.out.println("4. DELETE CONTACT");
-            System.out.println("5. EXIT");
+            System.out.println("5. SORT CONTACT BY NAME IN ASCENDING");
+            System.out.println("6. SORT CONTACT BY NAME IN DESCENDING");
+            System.out.println("7. VIEW CONTACTS BY STATE");
+            System.out.println("8. VIEW RECORDS FROM JSON FILE");
+            System.out.println("9. VIEW RECORDS FROM CSV FILE");
+            System.out.println("10. EXIT");
 
             int choice = scan.nextInt();
             scan.nextLine();
@@ -55,7 +62,8 @@ public class AddressBookApp
                     System.out.println("PHONE NUMBER : ");
                     c.setPhoneNumber(scan.nextLine());
 
-                    service.addContact(c);
+                   // service.addContact(c);
+                    service.addContactToFile(c);
                     break;
                 }
                 case 2 ->
@@ -108,12 +116,41 @@ public class AddressBookApp
                 }
                 case 5 ->
                 {
+                    service.sortContactsByNameAsc();
+                    break;
+                }
+                case 6 ->
+                {
+                    service.sortContactsByNameDesc();
+                    break;
+                }
+                case 7 ->
+                {
+                    System.out.print("ENTER STATE: ");
+                    String state = scan.nextLine();
+                    service.viewContactsByState(state);
+                    break;
+                }
+                case 8 ->
+                {
+                    System.out.println("RECORDS FROM JSON FILE");
+                    System.out.println("----------------------");
+                    JsonViewer.view();
+                    break;
+                }
+                case 9 ->
+                {
+                    System.out.println("RECORDS FROM CSV FILE");
+                    System.out.println("---------------------");
+                    CsvViewer.view();
+                    break;
+                }
+                case 10 ->
+                {
                     System.exit(0);
                 }
             }
-            }
-
         }
-
     }
+}
 

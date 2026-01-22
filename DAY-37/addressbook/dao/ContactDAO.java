@@ -8,4 +8,8 @@ public interface ContactDAO
     public void fetchOperation();
     public void updateOperation(int id, Contact contact);
     public void deleteOperation(int id);
+    public void sortByNameAsc();
+    public void sortByNameDsc();
+    public void viewByState(String state);
+    public void addContact(Contact c);
 }
