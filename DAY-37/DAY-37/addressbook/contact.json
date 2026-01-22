@@ -1,0 +1,17 @@
+[ {
+  "firstName" : "khabib",
+  "lastName" : "m",
+  "address" : "russia",
+  "city" : "russia",
+  "state" : "russia",
+  "zip" : "988976",
+  "phoneNumber" : "9876123456"
+}, {
+  "firstName" : "prabhu",
+  "lastName" : "n",
+  "address" : "rv nager",
+  "city" : "dindigul",
+  "state" : "tamil nadu",
+  "zip" : "988890",
+  "phoneNumber" : "9182736451"
+} ]
