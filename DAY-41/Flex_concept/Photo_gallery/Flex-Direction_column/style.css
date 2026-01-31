@@ -1,0 +1,108 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(180deg, #020617, #0f172a);
+    color: #ffffff;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+/* GALLERY CONTAINER (COLUMN FLEXBOX) */
+.gallery-container {
+    display: flex;
+    flex-direction: column;   /* REQUIRED */
+    gap: 30px;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* PHOTO CARD */
+.photo-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+/* IMAGE */
+.photo-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CAPTION */
+.caption {
+    padding: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* SPORT-SPECIFIC COLORS */
+.football .caption {
+    background: linear-gradient(90deg, #14532d, #16a34a);
+}
+
+.cricket .caption {
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
+}
+
+.basketball .caption {
+    background: linear-gradient(90deg, #7c2d12, #ea580c);
+}
+
+.tennis .caption {
+    background: linear-gradient(90deg, #365314, #84cc16);
+}
+
+.athletics .caption {
+    background: linear-gradient(90deg, #312e81, #6366f1);
+}
+
+/* HOVER */
+.photo-card:hover {
+    transform: scale(1.02);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .photo-card img {
+        height: 200px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+}
