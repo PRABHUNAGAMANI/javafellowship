@@ -1,0 +1,32 @@
+/* Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Flex Container */
+.flex-container {
+    display: flex;                 /* Enables Flexbox */
+    justify-content: space-around; /* Horizontal alignment */
+    align-items: center;           /* Vertical alignment */
+    flex-wrap: wrap;               /* Wrap items to next line */
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Flex Items */
+.flex-item {
+    background-color: #4CAF50;
+    color: white;
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    display: flex;                 /* Center text */
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 8px;
+}
