@@ -1,0 +1,94 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+/* GALLERY CONTAINER */
+.gallery-container {
+    display: flex;
+    flex-direction: row;      /* REQUIRED */
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    padding: 30px;
+    flex-wrap: wrap;          /* Responsive */
+}
+
+/* PHOTO CARD */
+.photo-card {
+    background-color: #020617;
+    width: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* IMAGE FIX (IMPORTANT) */
+.photo-card img {
+    width: 100%;
+    height: 180px;
+    display: block;           /* FIXES IMAGE NOT SHOWING ISSUE */
+    object-fit: cover;
+    background-color: #000;   /* Fallback if image loads slowly */
+}
+
+/* CAPTION */
+.caption {
+    padding: 14px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    background: linear-gradient(90deg, #1e40af, #2563eb);
+}
+
+/* HOVER EFFECT */
+.photo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .photo-card {
+        width: 90%;
+    }
+}
